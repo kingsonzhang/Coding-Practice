@@ -28,9 +28,22 @@ print(sum(sequence))
 random_numbers <- sample(-10:10, 10, TRUE)
 print(random_numbers)
 
-#Generate the first 10 numbers in the Fibonacci sequence
+# Generate the first 10 numbers in the Fibonacci sequence
 fibonacci <- numeric(10)
 fibonacci[1] <- fibonacci[2] <- 1
 for (i in 3:10)
     fibonacci[i] <- fibonacci[i - 1] + fibonacci[i - 2]
 print(fibonacci)
+
+# Find the factors of a given number
+get_factors <- function(value){
+    factors <- c(1)
+    for (i in 2:value){
+        if ((value %% i) == 0){
+            factors <- c(factors, i)
+        }
+    }
+    return(factors)
+}
+
+print(get_factors(12))
